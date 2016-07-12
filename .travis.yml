@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: 1Q32tXjnWd0rDgZWRI7l8a6mSpTCr5XsikwgjNKOpV7fz4nt36Ekmur1TjdcJvr+6UYsVcvTXCKVmaEK+tVdhaKn4OZ9dgYNvsWCjeFFytpwv3SSKOm2oDMMpbqvfBKJiBIVjF6Z3v+arDuiuYkPf5f3ptS9cMG8LsI59DLJkMZvaDP6+wRfkaanXvxok1Ttk7Iib4V6ntQs4WTztE9ae6B0+p+RKFt/EXObcvgIw2Uf1/TUv2YRdCKuUPOLr45BOhpnt83U3BA/lz/6nsVN1jvP786r3ZWwZcPZhUUa8LavflcE2i7oEy4V4WdPy0HE4ZSR10VTWF1FrdpvVMiex0hEZCSCrorXd4DibgIuIBGOt1XzRvIjQFyEzTxScbT97qTX3LwbFeCLhj9ZKIoI38l4ogbNHSXw4rn6fYSlO1QR/Yx5T7ITBtmcwMnYJI4F7SEuV+iwmy4gszgzueiqRNISeshucNg7fMU7BtdamR+27kVfVxHyV3fkN5DOOz6NOWbZ2PkUVZIwP+q7XJicMymGTYAWXLzLRGt9S+fI2mYr6fPEARGXMj0C5O8OD7CTX9Fza1alyjUNvxqQ5Iiu7xYwmUp/mu58jisgDnNV7NjJWYtiVHtIzQd14JNn+tGFvNbsF7+unrO4YHFKwA6dMrZNWGWL2+WZ18j3b/jkzhc=
+  app: secret-basin-23992
+  on:
+    repo: thrasherDGK/ui
