@@ -7,7 +7,7 @@ export const email = [
 
 export const password = [
   validator('presence', true),
-  validator('length', { min: 4, max: 24 })
+  validator('length', { min: 8, max: 24 })
 ];
 
 export const passwordConfirmation = [
